@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import SurveyList from "./components/SuveryList";
+import AppRouter from "./Routes";
 
 function App() {
   return (
@@ -22,8 +22,7 @@ function App() {
           </header>
         </Col>
       </Row>
-      <h1 className="mt-2 mb-4">Dashboard</h1>
-      <SurveyList />
+      <AppRouter />
     </Container>
   );
 }
