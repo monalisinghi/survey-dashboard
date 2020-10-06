@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
-import { jsonGet } from "./utils";
-import APP_CONFIG from "./config";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import SurveyList from "./components/SuveryList";
 
 function App() {
-  const [data, setData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    jsonGet(`${APP_CONFIG.baseUrl}/surveys`).then((result) => {
-      setData(result);
-      setIsLoading(false);
-    });
-  }, []);
-
   return (
     <Container>
       <Row>
@@ -33,15 +22,8 @@ function App() {
           </header>
         </Col>
       </Row>
-      {isLoading ? (
-        <Spinner animation="border" />
-      ) : (
-        <Row>
-          <Col>
-            <h1>Hello world!!!</h1>
-          </Col>
-        </Row>
-      )}
+      <h1 className="mt-2 mb-4">Dashboard</h1>
+      <SurveyList />
     </Container>
   );
 }
