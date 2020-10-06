@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { jsonGet } from "./utils";
+import APP_CONFIG from "./config";
 
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    jsonGet(
-      `https://px2yf2j445.execute-api.us-west-2.amazonaws.com/production/surveys`
-    ).then((result) => {
+    jsonGet(`${APP_CONFIG.baseUrl}/surveys`).then((result) => {
       setData(result);
       setIsLoading(false);
     });
