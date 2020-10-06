@@ -34,4 +34,4 @@ I have used `React` to build this application. `react-bootstrap` is used for com
 
 Fetch API is used to fetch data from `/surveys` and `/surveys/{id}` endpoints. Used react hooks and functional components to keep application code simple and maintainable.
 
-Written basic unit test cases using `testing-library`. Code coverage is kept to a lower end; to showcase the verity of tests to cover functionals and UI aspects of the application.
+Written basic unit test cases using `testing-library`. Code coverage is kept to a lower end; to showcase the variety of tests to cover functional and UI aspects of the application.
