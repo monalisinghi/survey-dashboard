@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { jsonGet } from "./utils";
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
     jsonGet(
       `https://px2yf2j445.execute-api.us-west-2.amazonaws.com/production/surveys`
     ).then((result) => {
-      console.log("data ==> ", result);
       setData(result);
       setIsLoading(false);
     });
@@ -35,6 +34,15 @@ function App() {
           </header>
         </Col>
       </Row>
+      {isLoading ? (
+        <Spinner animation="border" />
+      ) : (
+        <Row>
+          <Col>
+            <h1>Hello world!!!</h1>
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 }
